@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <!-- #region cabecera -->
   <title>David Ruiz · Usuarios</title>
+  <script src="ez-ui/js/theme-init.js"></script>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="ez-ui/css/ez-ui.css">
   <link rel="stylesheet" href="css/app.css">
+  <script src="js/user-detail.js" type="module"></script>
   <!-- #endregion -->
 </head>
 <body>
@@ -14,9 +16,18 @@
   <nav class="ez-navbar" aria-label="Principal">
     <div class="ez-container ez-navbar__inner">
       <a class="ez-navbar__brand" href="index.html">Gestión de usuarios</a>
-      <ul class="ez-navbar__links">
+      <button class="ez-button ez-button--secondary ez-navbar__toggle" type="button"
+              aria-expanded="false" aria-controls="navbar-links">Menú</button>
+      <ul id="navbar-links" class="ez-navbar__links">
         <li><a href="index.html">Usuarios</a></li>
         <li><a href="user-form.html">Nuevo usuario</a></li>
+        <li>
+          <button class="ez-button ez-button--secondary ez-theme-toggle" type="button"
+                  aria-label="Cambiar de tema" title="Cambiar de tema">
+            <span class="ez-theme-toggle__to-dark">Oscuro</span>
+            <span class="ez-theme-toggle__to-light">Claro</span>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
