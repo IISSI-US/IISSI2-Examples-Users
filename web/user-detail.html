@@ -38,6 +38,17 @@
     <!-- #region ficha -->
     <div id="user-details"></div>
     <!-- #endregion -->
+
+    <!-- #region dialogo -->
+    <dialog id="delete-dialog" class="ez-dialog" aria-labelledby="delete-dialog-title">
+      <h3 id="delete-dialog-title">¿Borrar el usuario?</h3>
+      <p>El usuario se borrará del sistema.</p>
+      <form method="dialog" class="ez-dialog__actions">
+        <button class="ez-button ez-button--secondary" type="submit" value="cancel">Cancelar</button>
+        <button class="ez-button ez-button--danger" type="submit" value="confirm">Borrar</button>
+      </form>
+    </dialog>
+    <!-- #endregion -->
   </main>
 </body>
 </html>
