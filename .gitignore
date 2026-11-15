@@ -1,0 +1,4 @@
+# Silence
+__pycache__/
+.venv/
+admin/logs/

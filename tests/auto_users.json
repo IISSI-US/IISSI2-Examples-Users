@@ -1,0 +1,78 @@
+{
+    "users_getAll_ok": {
+        "description": "GET /users: returns the current rows",
+        "endpoint": "GET /users",
+        "GET /users": null,
+        "expect": 200
+    },
+    "users_create_ok": {
+        "description": "POST /users: creates a row",
+        "endpoint": "POST /users",
+        "POST /users": {
+            "full_name": "David Ruiz",
+            "gender": "MASCULINO",
+            "age": 45,
+            "email": "t1.druiz@us.es"
+        },
+        "expect": 201
+    },
+    "users_create_missing_param": {
+        "description": "POST /users: without 'full_name' is a 400",
+        "endpoint": "POST /users",
+        "POST /users": {
+            "gender": "MASCULINO",
+            "age": 45,
+            "email": "t1.druiz@us.es"
+        },
+        "expect": {
+            "status": 400,
+            "message": "full_name"
+        }
+    },
+    "users_delete_not_found": {
+        "description": "DELETE /users/$user_id: a row that does not exist is a 404",
+        "endpoint": "DELETE /users/$user_id",
+        "DELETE /users/999999999": null,
+        "expect": 404
+    },
+    "users_delete_ok": {
+        "description": "DELETE /users/$user_id: deletes a row that no other row references",
+        "endpoint": "DELETE /users/$user_id",
+        "DELETE /users/1": null,
+        "expect": 200
+    },
+    "users_getById_ok": {
+        "description": "GET /users/$user_id: returns the current rows",
+        "endpoint": "GET /users/$user_id",
+        "GET /users/1": null,
+        "expect": 200
+    },
+    "users_getById_not_found": {
+        "description": "GET /users/$user_id: a row that does not exist is a 404",
+        "endpoint": "GET /users/$user_id",
+        "GET /users/999999999": null,
+        "expect": 404
+    },
+    "users_update_ok": {
+        "description": "PUT /users/$user_id: updates a row (with its current values)",
+        "endpoint": "PUT /users/$user_id",
+        "PUT /users/1": {
+            "full_name": "David Ruiz",
+            "gender": "MASCULINO",
+            "age": 45,
+            "email": "druiz@us.es"
+        },
+        "expect": 200
+    },
+    "users_update_not_found": {
+        "description": "PUT /users/$user_id: a row that does not exist is a 404",
+        "endpoint": "PUT /users/$user_id",
+        "PUT /users/999999999": {
+            "full_name": "David Ruiz",
+            "gender": "MASCULINO",
+            "age": 45,
+            "email": "druiz@us.es"
+        },
+        "expect": 404
+    }
+}
