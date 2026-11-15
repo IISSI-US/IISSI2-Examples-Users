@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Nuevo usuario · Usuarios</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <p><a href="index.html">Volver a la lista</a></p>
+
+  <h1>Nuevo usuario</h1>
+
+  <!-- #region formulario -->
+  <form>
+    <p>
+      <label for="full_name">Nombre:</label>
+      <input type="text" id="full_name" name="full_name" maxlength="120" required>
+    </p>
+    <p>
+      <label for="age">Edad:</label>
+      <input type="number" id="age" name="age" min="18" required>
+    </p>
+    <p>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" maxlength="255" required>
+    </p>
+    <p>
+      <label for="gender">Género:</label>
+      <select id="gender" name="gender">
+        <option value="">Sin especificar</option>
+        <option value="MASCULINO">Masculino</option>
+        <option value="FEMENINO">Femenino</option>
+        <option value="OTRO">Otro</option>
+      </select>
+    </p>
+    <p>
+      <button type="submit">Guardar</button>
+    </p>
+  </form>
+  <!-- #endregion -->
+</body>
+</html>
