@@ -1,0 +1,18 @@
+{
+    "getWomen": {
+        "description": "RF02: the users of gender FEMENINO (with all their columns, for the list)",
+        "route": "/users/women",
+        "method": "GET",
+        "sql": "SELECT * FROM users u WHERE u.gender = 'FEMENINO'",
+        "auth_required": false,
+        "allowed_roles": ["*"]
+    },
+    "getUsDomain": {
+        "description": "RF03: the users whose email domain is us.es (with all their columns, for the list)",
+        "route": "/users/us-domain",
+        "method": "GET",
+        "sql": "SELECT * FROM users u WHERE f_get_email_domain(u.email) = 'us.es'",
+        "auth_required": false,
+        "allowed_roles": ["*"]
+    }
+}

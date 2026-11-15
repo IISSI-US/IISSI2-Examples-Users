@@ -74,5 +74,17 @@
             "email": "druiz@us.es"
         },
         "expect": 404
+    },
+    "users_getUsDomain_ok": {
+        "description": "GET /users/us-domain: returns the current rows",
+        "endpoint": "GET /users/us-domain",
+        "GET /users/us-domain": null,
+        "expect": 200
+    },
+    "users_getWomen_ok": {
+        "description": "GET /users/women: returns the current rows",
+        "endpoint": "GET /users/women",
+        "GET /users/women": null,
+        "expect": 200
     }
 }

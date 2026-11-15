@@ -31,6 +31,16 @@ const usersAPI_auto = {
         let response = await axios.delete(`${BASE_URL}/users/${user_id}`, requestOptions);
         return response.data;
     },
+    // RF02: the users of gender FEMENINO (with all their columns, for the list)
+    getWomen: async function () {
+        let response = await axios.get(`${BASE_URL}/users/women`, requestOptions);
+        return response.data;
+    },
+    // RF03: the users whose email domain is us.es (with all their columns, for the list)
+    getUsDomain: async function () {
+        let response = await axios.get(`${BASE_URL}/users/us-domain`, requestOptions);
+        return response.data;
+    },
 };
 
 export { usersAPI_auto };
