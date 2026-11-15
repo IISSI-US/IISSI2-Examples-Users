@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <!-- #region cabecera -->
-  <title>David Ruiz · Usuarios</title>
+  <title>Usuario · Usuarios</title>
   <script src="ez-ui/js/theme-init.js"></script>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="ez-ui/css/ez-ui.css">
   <link rel="stylesheet" href="css/app.css">
+  <script src="js/libs/axios.min.js"></script>
   <script src="js/user-detail.js" type="module"></script>
   <!-- #endregion -->
 </head>
@@ -35,22 +36,7 @@
 
   <main class="ez-container">
     <!-- #region ficha -->
-    <h1>David Ruiz</h1>
-    <dl class="app-user-data">
-      <dt>Edad</dt>
-      <dd>45 años</dd>
-      <dt>Correo electrónico</dt>
-      <dd><a href="mailto:druiz@us.es">druiz@us.es</a></dd>
-      <dt>Género</dt>
-      <dd>Masculino</dd>
-    </dl>
-    <!-- #endregion -->
-
-    <!-- #region acciones -->
-    <p>
-      <a class="ez-button ez-button--secondary" href="user-form.html?userId=1">Editar</a>
-      <button class="ez-button ez-button--danger" type="button">Borrar</button>
-    </p>
+    <div id="user-details"></div>
     <!-- #endregion -->
   </main>
 </body>

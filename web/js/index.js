@@ -1,7 +1,9 @@
 "use strict";
 
 import { setupNavbar } from "./navbar.js";
-import { users } from "./data/users.js";
+import { usersAPI_auto } from "./api/_auto/users.js";
+import { userRenderer } from "./renderers/users.js";
+import { messageRenderer } from "./renderers/messages.js";
 
 // #region getAgeStats
 // RF04: la edad media y el total de una lista de usuarios
@@ -15,14 +17,30 @@ function getAgeStats(userList) {
 }
 // #endregion
 
+// #region showUsers
+// Pinta la tabla con los usuarios indicados y, encima, su total y su edad media (RF04)
+function showUsers(users) {
+  let container = document.getElementById("users");
+  container.replaceChildren(userRenderer.asTable(users));
+
+  let stats = getAgeStats(users);
+  let average = stats.average.toLocaleString("es-ES", { maximumFractionDigits: 1 });
+  document.getElementById("user-stats").textContent =
+    `${stats.total} usuarios, con una edad media de ${average} años.`;
+}
+// #endregion
+
 // #region main
-function main() {
+async function main() {
   setupNavbar();
 
-  // RF04 sobre los usuarios del array, en la consola: el total y la edad media, con un decimal
-  let stats = getAgeStats(users);
-  console.log(`Total de usuarios: ${stats.total}`);
-  console.log(`Edad media: ${stats.average.toFixed(1)} años`);
+  // Los usuarios, de la API (GET /api/users)
+  try {
+    let users = await usersAPI_auto.getAll();
+    showUsers(users);
+  } catch (error) {
+    messageRenderer.showErrorMessage("No se han podido cargar los usuarios", error);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", main);
