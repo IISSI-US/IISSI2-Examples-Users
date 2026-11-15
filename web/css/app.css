@@ -1,1 +1,20 @@
 /* Estilos propios de la aplicación: después de ez-ui, con sus variables y el prefijo app-. */
+
+/* #region ficha */
+/* Los datos de la ficha de un usuario (una lista de definiciones, que ez-ui no maqueta): el
+   nombre de cada dato a la izquierda y su valor a la derecha, en una rejilla de dos columnas */
+.app-user-data {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--ez-space-2) var(--ez-space-6);
+}
+
+.app-user-data dt {
+  font-weight: 650;
+  color: var(--ez-muted);
+}
+
+.app-user-data dd {
+  margin: 0;
+}
+/* #endregion */

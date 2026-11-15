@@ -2,29 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <!-- #region cabecera -->
   <title>David Ruiz · Usuarios</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="ez-ui/css/ez-ui.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- #endregion -->
 </head>
 <body>
-  <!-- #region ficha -->
-  <p><a href="index.html">Volver a la lista</a></p>
-
-  <h1>David Ruiz</h1>
-  <dl>
-    <dt>Edad</dt>
-    <dd>45 años</dd>
-    <dt>Correo electrónico</dt>
-    <dd><a href="mailto:druiz@us.es">druiz@us.es</a></dd>
-    <dt>Género</dt>
-    <dd>Masculino</dd>
-  </dl>
+  <!-- #region navbar -->
+  <nav class="ez-navbar" aria-label="Principal">
+    <div class="ez-container ez-navbar__inner">
+      <a class="ez-navbar__brand" href="index.html">Gestión de usuarios</a>
+      <ul class="ez-navbar__links">
+        <li><a href="index.html">Usuarios</a></li>
+        <li><a href="user-form.html">Nuevo usuario</a></li>
+      </ul>
+    </div>
+  </nav>
   <!-- #endregion -->
 
-  <!-- #region acciones -->
-  <p>
-    <a href="user-form.html?userId=1">Editar</a>
-    <button type="button">Borrar</button>
-  </p>
-  <!-- #endregion -->
+  <main class="ez-container">
+    <!-- #region ficha -->
+    <h1>David Ruiz</h1>
+    <dl class="app-user-data">
+      <dt>Edad</dt>
+      <dd>45 años</dd>
+      <dt>Correo electrónico</dt>
+      <dd><a href="mailto:druiz@us.es">druiz@us.es</a></dd>
+      <dt>Género</dt>
+      <dd>Masculino</dd>
+    </dl>
+    <!-- #endregion -->
+
+    <!-- #region acciones -->
+    <p>
+      <a class="ez-button ez-button--secondary" href="user-form.html?userId=1">Editar</a>
+      <button class="ez-button ez-button--danger" type="button">Borrar</button>
+    </p>
+    <!-- #endregion -->
+  </main>
 </body>
 </html>

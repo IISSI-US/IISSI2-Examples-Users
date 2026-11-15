@@ -2,41 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <!-- #region cabecera -->
   <title>Nuevo usuario · Usuarios</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="ez-ui/css/ez-ui.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- #endregion -->
 </head>
 <body>
-  <p><a href="index.html">Volver a la lista</a></p>
-
-  <h1>Nuevo usuario</h1>
-
-  <!-- #region formulario -->
-  <form>
-    <p>
-      <label for="full_name">Nombre:</label>
-      <input type="text" id="full_name" name="full_name" maxlength="120" required>
-    </p>
-    <p>
-      <label for="age">Edad:</label>
-      <input type="number" id="age" name="age" min="18" required>
-    </p>
-    <p>
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" maxlength="255" required>
-    </p>
-    <p>
-      <label for="gender">Género:</label>
-      <select id="gender" name="gender">
-        <option value="">Sin especificar</option>
-        <option value="MASCULINO">Masculino</option>
-        <option value="FEMENINO">Femenino</option>
-        <option value="OTRO">Otro</option>
-      </select>
-    </p>
-    <p>
-      <button type="submit">Guardar</button>
-    </p>
-  </form>
+  <!-- #region navbar -->
+  <nav class="ez-navbar" aria-label="Principal">
+    <div class="ez-container ez-navbar__inner">
+      <a class="ez-navbar__brand" href="index.html">Gestión de usuarios</a>
+      <ul class="ez-navbar__links">
+        <li><a href="index.html">Usuarios</a></li>
+        <li><a href="user-form.html" aria-current="page">Nuevo usuario</a></li>
+      </ul>
+    </div>
+  </nav>
   <!-- #endregion -->
+
+  <main class="ez-container">
+    <h1>Nuevo usuario</h1>
+
+    <!-- #region formulario -->
+    <form>
+      <div class="ez-field">
+        <label for="full_name">Nombre</label>
+        <input type="text" id="full_name" name="full_name" maxlength="120" required>
+      </div>
+      <div class="ez-field">
+        <label for="age">Edad</label>
+        <input type="number" id="age" name="age" min="18" required>
+        <span class="ez-field__hint">Los usuarios deben ser mayores de edad.</span>
+      </div>
+      <div class="ez-field">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" maxlength="255" required>
+      </div>
+      <div class="ez-field">
+        <label for="gender">Género</label>
+        <select id="gender" name="gender">
+          <option value="">Sin especificar</option>
+          <option value="MASCULINO">Masculino</option>
+          <option value="FEMENINO">Femenino</option>
+          <option value="OTRO">Otro</option>
+        </select>
+      </div>
+      <button class="ez-button" type="submit">Guardar</button>
+    </form>
+    <!-- #endregion -->
+  </main>
 </body>
 </html>
